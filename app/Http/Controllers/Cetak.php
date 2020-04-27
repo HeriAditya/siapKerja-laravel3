@@ -22,10 +22,7 @@ class Cetak extends Controller
         //testing dari yudi
         //testing yudi 2
         // rimal
-
-        $filter = array();
-        $filter['isPKWT'] = 1;
-        $filter['kodeStatus'] = 3;
+        
         $filter = array();
         $filter['isPKWT'] = 1;
         $filter['kodeStatus'] = 3;
