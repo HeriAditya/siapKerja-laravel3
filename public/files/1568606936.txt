@@ -1,0 +1,45 @@
+Bisnis 
+	Perizinan
+	UKM
+	IKM
+	Koperasi (Sirasul)
+E-Gov
+	LPSE
+	Sirup
+	Sikdas
+	E-Budgeting
+	E-Planning
+	E-Monev
+	E-Database
+	Smart Reporting		
+OPD
+	List Web OPD
+Pariwisata
+	Destinasi
+	Kuliner
+	Hotel
+	Event	
+Pendidikan
+	Aplikasi Beasiswa
+Layanan Publik
+	Antrian RS
+	PBB Online
+	Kependudukan
+	Bank Sampah
+	Simpati RS
+Berita
+Tanggap Darurat
+	No Telp Penting
+	Damkar
+	Polisi
+	PSC 119
+	Ambulance
+	Mobil Jenazah 
+Kesehatan
+	Link RS dan Puskesmas
+Pengaduan
+	Lapor
+	Baruga Sulsel
+	LutimPlus
+Ketenagakerjaan
+	

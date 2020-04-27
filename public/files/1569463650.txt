@@ -1,0 +1,8 @@
+nama wisata 		latitude 	longitude
+pantai lemo 		-2.636401	120.723166
+pulau bulupoloe 	-2.8113682	120.9618763
+pantai ide		-2.5151658	121.3426191
+Mata buntu		-2.5718528	121.2514386
+kebun raya sorowako
+danau matano 		-2.4914479	121.3771029
+
