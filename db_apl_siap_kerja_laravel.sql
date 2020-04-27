@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Apr 2020 pada 07.57
--- Versi server: 10.1.30-MariaDB
--- Versi PHP: 7.2.2
+-- Generation Time: Apr 27, 2020 at 09:14 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `file_pkwt`
+-- Table structure for table `file_pkwt`
 --
 
 CREATE TABLE `file_pkwt` (
@@ -35,13 +35,13 @@ CREATE TABLE `file_pkwt` (
   `onServerFileName` varchar(100) NOT NULL,
   `jenisDoc` int(11) NOT NULL,
   `verifikasi` int(11) NOT NULL,
-  `keterangan` varchar(50) DEFAULT NULL,
+  `keterangan` text DEFAULT NULL,
   `updated_at` datetime NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `file_pkwt`
+-- Dumping data for table `file_pkwt`
 --
 
 INSERT INTO `file_pkwt` (`idFile`, `tokenPKWT`, `originalFileName`, `onServerFileName`, `jenisDoc`, `verifikasi`, `keterangan`, `updated_at`, `created_at`) VALUES
@@ -64,12 +64,14 @@ INSERT INTO `file_pkwt` (`idFile`, `tokenPKWT`, `originalFileName`, `onServerFil
 (37, 'Qc63Ib', 'comt.txt', '1570001383.txt', 28, 1, 'dokument gjg kurang', '2019-10-02 07:29:43', '2019-10-02 06:46:56'),
 (38, 'xCsaGw', 'joomla.txt', '1569999746.txt', 29, 1, 'ftyjfjf', '2019-10-02 07:02:26', '2019-10-02 07:01:25'),
 (39, 'xCsaGw', 'comt.txt', '1569999748.txt', 30, 1, '', '2019-10-02 07:02:28', '2019-10-02 07:02:28'),
-(40, 'PDLq1b', 'JOYA COVER.docx', '1571015460.docx', 1, 1, 'dokoumen xxx kurang.. tolong uipload kembali', '2019-10-14 01:13:24', '2019-10-14 01:10:58');
+(40, 'PDLq1b', 'JOYA COVER.docx', '1571015460.docx', 1, 1, 'dokoumen xxx kurang.. tolong uipload kembali', '2019-10-14 01:13:24', '2019-10-14 01:10:58'),
+(41, 'uQwPPT', 'Get Data Hargafix.docx', '1587971133.docx', 1, 3, '1. tolong uplad berkas lainnya\r\n2. file perjanjian kinerja salah', '2020-04-27 07:09:46', '2020-04-27 07:05:34'),
+(42, 'uQwPPT', 'Get Data Hargafix.docx', '1587971142.docx', 2, 1, '1. tolong uplad berkas lainnya\r\n2. file perjanjian kinerja salah', '2020-04-27 07:09:46', '2020-04-27 07:05:42');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kode_status`
+-- Table structure for table `kode_status`
 --
 
 CREATE TABLE `kode_status` (
@@ -78,7 +80,7 @@ CREATE TABLE `kode_status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kode_status`
+-- Dumping data for table `kode_status`
 --
 
 INSERT INTO `kode_status` (`kodeStatus`, `namaStatus`) VALUES
@@ -89,7 +91,7 @@ INSERT INTO `kode_status` (`kodeStatus`, `namaStatus`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `list_perusahaan`
+-- Table structure for table `list_perusahaan`
 --
 
 CREATE TABLE `list_perusahaan` (
@@ -98,7 +100,7 @@ CREATE TABLE `list_perusahaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `list_perusahaan`
+-- Dumping data for table `list_perusahaan`
 --
 
 INSERT INTO `list_perusahaan` (`idPerusahaan`, `namaPerusahaan`) VALUES
@@ -108,7 +110,7 @@ INSERT INTO `list_perusahaan` (`idPerusahaan`, `namaPerusahaan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -118,7 +120,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -129,7 +131,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -141,7 +143,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelamar`
+-- Table structure for table `pelamar`
 --
 
 CREATE TABLE `pelamar` (
@@ -156,7 +158,7 @@ CREATE TABLE `pelamar` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pkwt`
+-- Table structure for table `pkwt`
 --
 
 CREATE TABLE `pkwt` (
@@ -173,7 +175,7 @@ CREATE TABLE `pkwt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pkwt`
+-- Dumping data for table `pkwt`
 --
 
 INSERT INTO `pkwt` (`idPKWT`, `idPerusahaan`, `aliasPKWT`, `tokenPKWT`, `kodeStatus`, `keterangan`, `isKontrak`, `isPKWT`, `created_at`, `updated_at`) VALUES
@@ -184,12 +186,13 @@ INSERT INTO `pkwt` (`idPKWT`, `idPerusahaan`, `aliasPKWT`, `tokenPKWT`, `kodeSta
 (6, 1, 'Ts', 'WOc9mR', 1, '', 1, 0, '2019-10-02 06:28:04', '2019-10-02 06:28:04'),
 (7, 1, 'pkwt', 'mE77It', 1, '', 1, 0, '2019-10-02 06:46:04', '2019-10-02 06:46:04'),
 (8, 1, 'pkwt2', 'Qc63Ib', 1, 'dokument gjg kurang', 0, 1, '2019-10-02 06:46:56', '2019-10-02 07:29:43'),
-(9, 1, 'test', 'PDLq1b', 2, 'dokoumen xxx kurang.. tolong uipload kembali', 1, 0, '2019-10-14 01:10:58', '2019-10-14 01:13:24');
+(9, 1, 'test', 'PDLq1b', 2, 'dokoumen xxx kurang.. tolong uipload kembali', 1, 0, '2019-10-14 01:10:58', '2019-10-14 01:13:24'),
+(10, 1, 'Pendaftaran Penimbunan SD 1 Malili', 'uQwPPT', 2, '1. tolong uplad berkas lainnya\r\n2. file perjanjian kinerja salah', 1, 0, '2020-04-27 07:05:34', '2020-04-27 07:09:46');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pkwt_file_jenis`
+-- Table structure for table `pkwt_file_jenis`
 --
 
 CREATE TABLE `pkwt_file_jenis` (
@@ -202,7 +205,7 @@ CREATE TABLE `pkwt_file_jenis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pkwt_file_jenis`
+-- Dumping data for table `pkwt_file_jenis`
 --
 
 INSERT INTO `pkwt_file_jenis` (`jenisDoc`, `namaJenis`, `isPKWTJasa`, `isPKWTBorong`, `isKontrakJasa`, `isKontrakBorong`) VALUES
@@ -243,12 +246,13 @@ INSERT INTO `pkwt_file_jenis` (`jenisDoc`, `namaJenis`, `isPKWTJasa`, `isPKWTBor
 (54, 'Bukti Wajib Lapor Ketenagakerjaan', 0, 0, 1, 0),
 (55, 'Surat Izin Operasional Perusaaan penyedia jasa pekerja/buruh', 0, 0, 1, 0),
 (56, 'Keterangan Domisili Perusahaan ', 0, 0, 1, 0),
-(57, 'NPWP Perusahaan ', 0, 0, 1, 0);
+(57, 'NPWP Perusahaan ', 0, 0, 1, 0),
+(58, 'File Tambahan', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -264,7 +268,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `jenis`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -275,7 +279,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `je
 --
 
 --
--- Indeks untuk tabel `file_pkwt`
+-- Indexes for table `file_pkwt`
 --
 ALTER TABLE `file_pkwt`
   ADD PRIMARY KEY (`idFile`),
@@ -284,37 +288,37 @@ ALTER TABLE `file_pkwt`
   ADD KEY `verifikasi` (`verifikasi`);
 
 --
--- Indeks untuk tabel `kode_status`
+-- Indexes for table `kode_status`
 --
 ALTER TABLE `kode_status`
   ADD PRIMARY KEY (`kodeStatus`);
 
 --
--- Indeks untuk tabel `list_perusahaan`
+-- Indexes for table `list_perusahaan`
 --
 ALTER TABLE `list_perusahaan`
   ADD PRIMARY KEY (`idPerusahaan`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indeks untuk tabel `pelamar`
+-- Indexes for table `pelamar`
 --
 ALTER TABLE `pelamar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pkwt`
+-- Indexes for table `pkwt`
 --
 ALTER TABLE `pkwt`
   ADD PRIMARY KEY (`idPKWT`),
@@ -323,76 +327,76 @@ ALTER TABLE `pkwt`
   ADD KEY `idPerusahaan` (`idPerusahaan`);
 
 --
--- Indeks untuk tabel `pkwt_file_jenis`
+-- Indexes for table `pkwt_file_jenis`
 --
 ALTER TABLE `pkwt_file_jenis`
   ADD PRIMARY KEY (`jenisDoc`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `file_pkwt`
+-- AUTO_INCREMENT for table `file_pkwt`
 --
 ALTER TABLE `file_pkwt`
-  MODIFY `idFile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `idFile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT untuk tabel `kode_status`
+-- AUTO_INCREMENT for table `kode_status`
 --
 ALTER TABLE `kode_status`
   MODIFY `kodeStatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `list_perusahaan`
+-- AUTO_INCREMENT for table `list_perusahaan`
 --
 ALTER TABLE `list_perusahaan`
   MODIFY `idPerusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `pelamar`
+-- AUTO_INCREMENT for table `pelamar`
 --
 ALTER TABLE `pelamar`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `pkwt`
+-- AUTO_INCREMENT for table `pkwt`
 --
 ALTER TABLE `pkwt`
-  MODIFY `idPKWT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idPKWT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `pkwt_file_jenis`
+-- AUTO_INCREMENT for table `pkwt_file_jenis`
 --
 ALTER TABLE `pkwt_file_jenis`
-  MODIFY `jenisDoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `jenisDoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `file_pkwt`
+-- Constraints for table `file_pkwt`
 --
 ALTER TABLE `file_pkwt`
   ADD CONSTRAINT `file_pkwt_ibfk_1` FOREIGN KEY (`tokenPKWT`) REFERENCES `pkwt` (`tokenPKWT`),
@@ -400,7 +404,7 @@ ALTER TABLE `file_pkwt`
   ADD CONSTRAINT `file_pkwt_ibfk_3` FOREIGN KEY (`verifikasi`) REFERENCES `kode_status` (`kodeStatus`);
 
 --
--- Ketidakleluasaan untuk tabel `pkwt`
+-- Constraints for table `pkwt`
 --
 ALTER TABLE `pkwt`
   ADD CONSTRAINT `pkwt_ibfk_1` FOREIGN KEY (`kodeStatus`) REFERENCES `kode_status` (`kodeStatus`),
