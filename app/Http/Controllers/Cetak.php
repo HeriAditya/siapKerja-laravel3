@@ -20,7 +20,7 @@ class Cetak extends Controller
     public function pkwt()
     {
 
-        //testing terakhir
+        //testing terakhir2
         $filter= array();
         $filter['isPKWT']= 1;
         $filter['kodeStatus']= 3;
