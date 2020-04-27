@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Sep 2019 pada 04.30
--- Versi server: 10.3.16-MariaDB
--- Versi PHP: 7.2.20
+-- Waktu pembuatan: 27 Apr 2020 pada 07.57
+-- Versi server: 10.1.30-MariaDB
+-- Versi PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,9 +46,25 @@ CREATE TABLE `file_pkwt` (
 
 INSERT INTO `file_pkwt` (`idFile`, `tokenPKWT`, `originalFileName`, `onServerFileName`, `jenisDoc`, `verifikasi`, `keterangan`, `updated_at`, `created_at`) VALUES
 (21, '0ZUvnH', 'biodata.txt', '1568607956.txt', 1, 1, NULL, '2019-09-19 02:08:49', '2019-09-16 04:25:56'),
-(22, 'ux43xi', 'comt.txt', '1568614113.txt', 1, 1, 'file yang pertama kurang lengkapdfg', '2019-09-19 02:33:31', '2019-09-16 06:06:24'),
-(23, 'ux43xi', 'comt.txt', '1568614032.txt', 2, 3, 'file yang pertama kurang lengkapdfg', '2019-09-19 02:33:31', '2019-09-16 06:07:12'),
-(24, 'ux43xi', 'biodata.txt', '1568614071.txt', 3, 3, 'file yang pertama kurang lengkapdfg', '2019-09-19 02:33:31', '2019-09-16 06:07:51');
+(22, 'ux43xi', 'biodata.txt', '1569384329.txt', 1, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-16 06:06:24'),
+(23, 'ux43xi', 'comt.txt', '1569384335.txt', 2, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-16 06:07:12'),
+(24, 'ux43xi', 'biodata.txt', '1569395664.txt', 3, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-16 06:07:51'),
+(25, 'ux43xi', 'biodata.txt', '1569394903.txt', 4, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-25 07:01:38'),
+(26, 'ux43xi', 'biodata.txt', '1569394906.txt', 7, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-25 07:01:46'),
+(27, 'ux43xi', 'comt.txt', '1569394912.txt', 6, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-25 07:01:52'),
+(28, 'ux43xi', 'comt.txt', '1569395227.txt', 5, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-25 07:07:04'),
+(29, 'ux43xi', 'comt.txt', '1569395232.txt', 8, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-25 07:07:12'),
+(30, 'ux43xi', 'biodata.txt', '1569396246.txt', 9, 3, 'pkwt sudah dapata', '2019-10-02 02:14:23', '2019-09-25 07:07:16'),
+(31, 'dGPTpb', 'biodata.txt', '1569463645.txt', 1, 1, '', '2019-09-26 02:07:25', '2019-09-26 02:07:25'),
+(32, 'dGPTpb', 'comt.txt', '1569463648.txt', 2, 1, '', '2019-09-26 02:07:28', '2019-09-26 02:07:28'),
+(33, 'dGPTpb', 'tempat wisata.txt', '1569463650.txt', 3, 1, '', '2019-09-26 02:07:30', '2019-09-26 02:07:30'),
+(34, 'xCsaGw', 'biodata.txt', '1569999744.txt', 28, 1, 'ftyjfjf', '2019-10-02 07:02:24', '2019-10-02 03:29:23'),
+(35, 'WOc9mR', 'comt.txt', '1569997684.txt', 47, 1, '', '2019-10-02 06:28:04', '2019-10-02 06:28:04'),
+(36, 'mE77It', 'biodata.txt', '1569998764.txt', 1, 1, '', '2019-10-02 06:46:04', '2019-10-02 06:46:04'),
+(37, 'Qc63Ib', 'comt.txt', '1570001383.txt', 28, 1, 'dokument gjg kurang', '2019-10-02 07:29:43', '2019-10-02 06:46:56'),
+(38, 'xCsaGw', 'joomla.txt', '1569999746.txt', 29, 1, 'ftyjfjf', '2019-10-02 07:02:26', '2019-10-02 07:01:25'),
+(39, 'xCsaGw', 'comt.txt', '1569999748.txt', 30, 1, '', '2019-10-02 07:02:28', '2019-10-02 07:02:28'),
+(40, 'PDLq1b', 'JOYA COVER.docx', '1571015460.docx', 1, 1, 'dokoumen xxx kurang.. tolong uipload kembali', '2019-10-14 01:13:24', '2019-10-14 01:10:58');
 
 -- --------------------------------------------------------
 
@@ -150,6 +166,8 @@ CREATE TABLE `pkwt` (
   `tokenPKWT` varchar(20) NOT NULL,
   `kodeStatus` int(11) NOT NULL,
   `keterangan` text NOT NULL,
+  `isKontrak` int(11) NOT NULL,
+  `isPKWT` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -158,9 +176,15 @@ CREATE TABLE `pkwt` (
 -- Dumping data untuk tabel `pkwt`
 --
 
-INSERT INTO `pkwt` (`idPKWT`, `idPerusahaan`, `aliasPKWT`, `tokenPKWT`, `kodeStatus`, `keterangan`, `created_at`, `updated_at`) VALUES
-(2, 1, 'Pendaftaran Pemborongan Proyek ABCD ', '0ZUvnH', 1, '', '2019-09-16 03:55:14', '2019-09-16 03:55:14'),
-(3, 1, 'mendaftarPKWT Pemborongan', 'ux43xi', 1, 'file yang pertama kurang lengkapdfg', '2019-09-16 06:06:24', '2019-09-19 02:33:31');
+INSERT INTO `pkwt` (`idPKWT`, `idPerusahaan`, `aliasPKWT`, `tokenPKWT`, `kodeStatus`, `keterangan`, `isKontrak`, `isPKWT`, `created_at`, `updated_at`) VALUES
+(2, 1, 'Pendaftaran Pemborongan Proyek ABCD ', '0ZUvnH', 1, '', 0, 1, '2019-09-16 03:55:14', '2019-09-16 03:55:14'),
+(3, 1, 'mendaftarPKWT Pemborongan', 'ux43xi', 3, 'pkwt sudah dapata', 0, 1, '2019-09-16 06:06:24', '2019-10-02 02:14:23'),
+(4, 1, 'mendaftarPKWT Pemborongan', 'dGPTpb', 1, '', 0, 1, '2019-09-26 02:07:25', '2019-09-26 02:07:30'),
+(5, 1, 'ga', 'xCsaGw', 1, 'ftyjfjf', 0, 1, '2019-10-02 03:29:23', '2019-10-02 07:02:28'),
+(6, 1, 'Ts', 'WOc9mR', 1, '', 1, 0, '2019-10-02 06:28:04', '2019-10-02 06:28:04'),
+(7, 1, 'pkwt', 'mE77It', 1, '', 1, 0, '2019-10-02 06:46:04', '2019-10-02 06:46:04'),
+(8, 1, 'pkwt2', 'Qc63Ib', 1, 'dokument gjg kurang', 0, 1, '2019-10-02 06:46:56', '2019-10-02 07:29:43'),
+(9, 1, 'test', 'PDLq1b', 2, 'dokoumen xxx kurang.. tolong uipload kembali', 1, 0, '2019-10-14 01:10:58', '2019-10-14 01:13:24');
 
 -- --------------------------------------------------------
 
@@ -170,23 +194,56 @@ INSERT INTO `pkwt` (`idPKWT`, `idPerusahaan`, `aliasPKWT`, `tokenPKWT`, `kodeSta
 
 CREATE TABLE `pkwt_file_jenis` (
   `jenisDoc` int(11) NOT NULL,
-  `namaJenis` varchar(100) NOT NULL
+  `namaJenis` varchar(100) NOT NULL,
+  `isPKWTJasa` int(11) NOT NULL,
+  `isPKWTBorong` int(11) NOT NULL,
+  `isKontrakJasa` int(11) NOT NULL,
+  `isKontrakBorong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pkwt_file_jenis`
 --
 
-INSERT INTO `pkwt_file_jenis` (`jenisDoc`, `namaJenis`) VALUES
-(1, 'Surat Permohonan'),
-(2, 'Perjanjian Pemborongan Pekerjaan yang Telah Ditandatangani Para Pihak Diatas Materai'),
-(3, 'Foto copy bukti pelaporan jenis pekerjaan penunjang'),
-(4, 'Foto copy surat izin usaha '),
-(5, 'Foto copy akta pendirian dan anggaran dasar perusahaan'),
-(6, 'Foto copy bukti pengesahaan sebagai badan hukum perseroan terbatas'),
-(7, 'Foto copy tanda daftar perusahaan '),
-(8, 'Foto copy bukti wajib lapor ketenagakerjaan (wlk)'),
-(9, 'Foto copy NPWP perusahaan');
+INSERT INTO `pkwt_file_jenis` (`jenisDoc`, `namaJenis`, `isPKWTJasa`, `isPKWTBorong`, `isKontrakJasa`, `isKontrakBorong`) VALUES
+(1, 'Surat Permohonan', 0, 0, 0, 1),
+(2, 'Foto copy perjanjian kerja (kontrak)', 0, 0, 0, 1),
+(3, 'Rekap nama dan jabatan pekerja/ buruh yang di sahkan oleh bpjs ketenagakerjaan/ bpjs kesehatan ', 0, 0, 0, 1),
+(4, 'Draf perjanjian kerja yang di lampirkan dalam permohonan pendaftaran perjanjian kerja penyedia jasa', 0, 0, 0, 1),
+(5, 'Foto copy bukti pendaftaran pernjanjian penyedia jasa pekerja/buruh', 0, 0, 0, 1),
+(6, 'Foto copy ktp', 0, 0, 0, 1),
+(7, 'Foto copy wlk', 0, 0, 0, 1),
+(8, 'Foto copy rekomendasi bpjs ketenagakerjaan dan bpjs kesehatan', 0, 0, 0, 1),
+(9, 'Foto copy tanda terima kontrak dari perusahaan kepada pekerja/buruh', 0, 0, 0, 1),
+(28, 'Surat Permohonan', 1, 0, 0, 0),
+(29, 'Perjanjian Kerja', 1, 0, 0, 0),
+(30, 'Rekap Nama dan Jabatan Pekerja / Buruh yang di Sahkan oleh BPJD Ketenagakerjaan / BPJS Kesehatan', 1, 0, 0, 0),
+(31, 'Draf Perjanjian Kerja yang di Lampirkan dalam Permohonan Pendaftaran Perjanjian Kerja Penyedia Jasa', 1, 0, 0, 0),
+(32, 'Bukti Pendaftaran Perjanjian Penyedia Jasa Pekerja/Buruh', 1, 0, 0, 0),
+(33, 'KTP', 1, 0, 0, 0),
+(34, 'WLK', 1, 0, 0, 0),
+(35, 'Rekomendasi BPJS Ketenagakerjaan dan BPJS Kesehatan', 1, 0, 0, 0),
+(36, 'Tanda Terima Kontrak dari Perusahaan kepada pekerja/buruh', 1, 0, 0, 0),
+(37, 'Surat Permohonan di Tujukan ke Dinas Penanaman Modal dan PTSP', 0, 1, 0, 0),
+(38, 'Bukti Pendaftaran Perjanjian Pemborongan Pekerjaan', 0, 1, 0, 0),
+(39, 'Rekap Nama dan Jabatan Pekerja/Buruh yang di sahkan oleh BPJS Ketenagakerjaan / BPJS Kesehatan', 0, 1, 0, 0),
+(40, 'Rekomendasi BPJS Ketenagakerjaan dan BPJS Kesehatan', 0, 1, 0, 0),
+(41, 'Perjanjian Kerja antara Perusahaan dengan pekerja /buruh', 0, 1, 0, 0),
+(42, 'SK Pengangkatan sebagai Karyawan Tetap (PKWTT)', 0, 1, 0, 0),
+(43, 'Wajib Lapor Ketenagakerjaan (WLK)', 0, 1, 0, 0),
+(44, 'Kartu Tanda Penduduk (KTP)', 0, 1, 0, 0),
+(45, 'Tanda Terima Kontrak dari Perusahaan kepada pekerja/buruh', 0, 1, 0, 0),
+(47, 'Surat Permohonan', 0, 0, 1, 0),
+(48, 'Perjanjian Penyedia Jasa Pekerja/ Buruh ', 0, 0, 1, 0),
+(49, 'Surat Izin Usaha', 0, 0, 1, 0),
+(50, 'Draf Perjanjian Kerja antara perusahaan dengan pekerja / buruh', 0, 0, 1, 0),
+(51, 'Akta Pendirian dan Anggaran Dasar Persahaan ', 0, 0, 1, 0),
+(52, 'Bukti Pengesahan sebagai badan hukum (PT)', 0, 0, 1, 0),
+(53, 'Tanda Daftar Perusahaan', 0, 0, 1, 0),
+(54, 'Bukti Wajib Lapor Ketenagakerjaan', 0, 0, 1, 0),
+(55, 'Surat Izin Operasional Perusaaan penyedia jasa pekerja/buruh', 0, 0, 1, 0),
+(56, 'Keterangan Domisili Perusahaan ', 0, 0, 1, 0),
+(57, 'NPWP Perusahaan ', 0, 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -211,7 +268,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `jenis`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'PT Heri Aditya', 'adityaheri@yahoo.com', NULL, '$2y$10$V9YLuGvk2SNxG5V2lxr/XO5tZjTyc2DU7P.SmsY3V5fb.XD2A.PPm', '2', NULL, '2019-09-09 18:21:36', '2019-09-09 18:21:36');
+(1, 'PT Heri Aditya', 'adityaheri@yahoo.com', NULL, '$2y$10$V9YLuGvk2SNxG5V2lxr/XO5tZjTyc2DU7P.SmsY3V5fb.XD2A.PPm', '1', NULL, '2019-09-09 18:21:36', '2019-09-09 18:21:36');
 
 --
 -- Indexes for dumped tables
@@ -286,7 +343,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `file_pkwt`
 --
 ALTER TABLE `file_pkwt`
-  MODIFY `idFile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idFile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT untuk tabel `kode_status`
@@ -316,13 +373,13 @@ ALTER TABLE `pelamar`
 -- AUTO_INCREMENT untuk tabel `pkwt`
 --
 ALTER TABLE `pkwt`
-  MODIFY `idPKWT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPKWT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `pkwt_file_jenis`
 --
 ALTER TABLE `pkwt_file_jenis`
-  MODIFY `jenisDoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `jenisDoc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
