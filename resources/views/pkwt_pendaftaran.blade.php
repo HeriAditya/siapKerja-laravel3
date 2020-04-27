@@ -86,7 +86,7 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Perihal / Alias <span class="required">*</span>
                                     </label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                      <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                                      <input type="text" id="alias" name="alias" required="required" class="form-control col-md-7 col-xs-12" onchange="changeAllAlias()">
                                     </div>
                                   </div>
                                   <div class="form-group">
@@ -120,7 +120,7 @@
                                     <form method="POST" action="{{ route('fileUploadPost') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                          <input type="text" name="xAlias" id="xAlias" class="xAlias">
+                                          <input type="hidden" name="xAlias" id="xAlias" class="xAlias">
                                           
                                             <input name="file" id="poster" type="file" ><br/>
                                             <input name="jenis_doc" type="hidden" value="{{$file->jenisDoc}}">
