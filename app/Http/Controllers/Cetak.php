@@ -20,10 +20,6 @@ class Cetak extends Controller
     public function pkwt()
     {
 
-        //testing dari heri
-        //testing dari yudi
-        //testing dari heri
-        //testing heri 2
 
         $filter= array();
         $filter['isPKWT']= 1;
