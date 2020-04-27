@@ -120,7 +120,7 @@
                                     <form method="POST" action="{{ route('fileUploadPost') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
-                                          <input type="hidden" name="xAlias" id="xAlias" class="xAlias">
+                                          <input type="text" name="xAlias" id="xAlias" class="xAlias">
                                           
                                             <input name="file" id="poster" type="file" ><br/>
                                             <input name="jenis_doc" type="hidden" value="{{$file->jenisDoc}}">
